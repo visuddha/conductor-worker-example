@@ -1,0 +1,38 @@
+{
+    "createTime": 1691582688775,
+    "accessPolicy": {},
+    "name": "demo",
+    "description": "Edit or extend this sample workflow. Set the workflow name to get started",
+    "version": 1,
+    "tasks": [
+      {
+        "name": "get_starting_params",
+        "taskReferenceName": "get_starting_params",
+        "description": "Getting starter params for the Workflow.",
+        "inputParameters": {
+          "start_id": "${workflow.input.start_id}",
+          "env": {
+            "taskId": "${CPEWF_TASK_ID}",
+            "workflowId": "${HOSTNAME}"
+          }
+        },
+        "type": "SIMPLE",
+        "startDelay": 0,
+        "optional": false,
+        "asyncComplete": false
+      }
+    ],
+    "inputParameters": [],
+    "outputParameters": {
+      "data": "${get_population_data.output.response.body.data}",
+      "source": "${get_population_data.output.response.body.source}"
+    },
+    "schemaVersion": 2,
+    "restartable": true,
+    "workflowStatusListenerEnabled": false,
+    "ownerEmail": "example@email.com",
+    "timeoutPolicy": "ALERT_ONLY",
+    "timeoutSeconds": 0,
+    "variables": {},
+    "inputTemplate": {}
+  }
